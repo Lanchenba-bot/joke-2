@@ -1,0 +1,158 @@
+/* app/styles/jokes.css */
+.jokes-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: inherit;
+}
+.jokes-header {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+.jokes-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.jokes-header .home-link {
+  font-family: var(--font-display);
+  font-size: 3rem;
+}
+.jokes-header .home-link a {
+  color: var(--color-foreground);
+}
+.jokes-header .home-link a:hover {
+  text-decoration: none;
+}
+.jokes-header .logo-medium {
+  display: none;
+}
+.jokes-header a:hover {
+  text-decoration-style: wavy;
+  text-decoration-thickness: 1px;
+}
+.jokes-header .user-info {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  white-space: nowrap;
+}
+.jokes-main {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  flex: 1 1 100%;
+}
+.jokes-main .container {
+  display: flex;
+  gap: 1rem;
+}
+.jokes-list {
+  max-width: 12rem;
+}
+.jokes-outlet {
+  flex: 1;
+}
+.jokes-footer {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+@media print, (min-width: 640px) {
+  .jokes-header .logo {
+    display: none;
+  }
+  .jokes-header .logo-medium {
+    display: block;
+  }
+  .jokes-main {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+@media (max-width: 639px) {
+  .jokes-main .container {
+    flex-direction: column;
+  }
+}
+.commentbox {
+  margin-top: 1rem;
+  display: grid;
+  gap: .5rem;
+  background-color: #00000040;
+  padding: .5rem;
+  border-radius: 4px;
+  font-weight: 400;
+  font-size: 14px;
+}
+.commentbox > p {
+  margin: .5rem;
+  font-weight: 600;
+  font-size: 20px;
+  text-decoration: underline;
+}
+.comments {
+  background-color: #00000040;
+  border-radius: 4px;
+  padding: .5rem;
+}
+.comments > span {
+  display: inline-block;
+  background-color: #ffffff4d;
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+.comments > p {
+  padding: .5rem;
+  margin: 4px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, .5);
+}
+.delete-button-container {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.delete-button {
+  background-color: #f006;
+  border: 0;
+  padding: .5rem 1rem;
+  border-radius: 4px;
+  color: #f0f8ff;
+}
+.comment-form {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.commentbox::-webkit-scrollbar {
+  width: 4px;
+}
+.commentbox::-webkit-scrollbar-track {
+  border-radius: 4px;
+  background: rgba(241, 241, 241, .2);
+}
+.commentbox::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background: rgba(136, 136, 136, .5);
+}
+.commentbox::-webkit-scrollbar-thumb:hover {
+  background: rgba(85, 85, 85, .5);
+}
+.edit-joke {
+  padding: 1rem 0;
+}
+.edit-joke label {
+  font-size: large;
+  font-weight: 600;
+  margin: 1rem 0;
+}
+.delete-button-comment {
+  background-color: #ff0000b3;
+  color: #f0f8ff;
+  margin: 0 1px 0 0;
+  border: 0;
+  border-radius: 2px;
+  font-size: small;
+  padding: .2rem .5rem;
+}
+.edit-and-delete-jokes {
+  margin: 1rem 0;
+}
+/*# sourceMappingURL=/build/_assets/jokes-NGGQERGV.css.map */

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../app/routes/jokes/index.tsx"],
+  "sourcesContent": ["import { json } from \"@remix-run/node\"\r\nimport { Link, useLoaderData } from \"@remix-run/react\"\r\n\r\nimport { db } from \"~/utils/db.server\"\r\n\r\nexport const loader = async () => {\r\n  const count = await db.joke.count()\r\n  const randomRowNumber = Math.floor(Math.random() * count)\r\n  const [randomJoke] = await db.joke.findMany({\r\n    skip: randomRowNumber,\r\n    take: 1,\r\n  })\r\n  return json({ randomJoke })\r\n}\r\n\r\nexport default function JokesIndexRoute() {\r\n  const data = useLoaderData<typeof loader>()\r\n\r\n  return (\r\n    <div>\r\n      <p>Here's a random joke:</p>\r\n      <p>{data.randomJoke.content}</p>\r\n      <Link to={data.randomJoke.id}>\"{data.randomJoke.name}\" Permalink</Link>\r\n    </div>\r\n  )\r\n}\r\n"],
+  "mappings": ";;;;;;;;;;;;;;;AAAA,kBAAqB;AAGrB,gBAAmB;AAiBb;AALS,SAAR,kBAAmC;AACxC,QAAM,OAAO,cAA6B;AAE1C,SACE,mDAAC,SACC;AAAA,uDAAC,OAAE,qCAAH;AAAA;AAAA;AAAA;AAAA,WAAwB;AAAA,IACxB,mDAAC,OAAG,eAAK,WAAW,WAApB;AAAA;AAAA;AAAA;AAAA,WAA4B;AAAA,IAC5B,mDAAC,QAAK,IAAI,KAAK,WAAW,IAAI;AAAA;AAAA,MAAE,KAAK,WAAW;AAAA,MAAK;AAAA,SAArD;AAAA;AAAA;AAAA;AAAA,WAAgE;AAAA,OAHlE;AAAA;AAAA;AAAA;AAAA,SAIA;AAEJ;",
+  "names": []
+}
